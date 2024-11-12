@@ -42,5 +42,5 @@ models:
       +materialized: table
 
 seeds:
-	+database: "<ALUMNOX>_DEV_BRONZE_DB"
-	+schema: "SEEDS"
+    +database: "<ALUMNOX>_DEV_BRONZE_DB"
+    +schema: "SEEDS"
