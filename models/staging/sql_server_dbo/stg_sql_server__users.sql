@@ -12,15 +12,15 @@ WITH src_users AS (
 renamed_casted AS (
     SELECT
         user_id
-        , updated_at
+        , convert_timezone('UTC', updated_at)_UTC as updated_at_UTC
         , address_id
         , last_name
         , created_at
         , phone_number
         , first_name
         , email
-        , _fivetran_deleted as data_modification
-        , _fivetran_synced AS date_load
+        , _fivetran_deleted as date_modification
+        , convert_timezone('UTC', _fivetran_synced) AS date_load_UTC
     FROM src_users
     )
     

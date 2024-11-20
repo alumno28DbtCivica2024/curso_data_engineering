@@ -15,17 +15,17 @@ renamed_casted AS (
         , promo_id as promo_name
         , discount
         , status
-        , _fivetran_deleted AS date_modication
-        , _fivetran_synced AS date_load
+        , _fivetran_deleted date_modification
+        , convert_timezone('UTC', _fivetran_synced) AS date_load_UTC
     FROM src_promos
-    union ALL
-    SELECT 
-        {{ dbt_utils.generate_surrogate_key(["'NO_PROMO'"]) }},
-        'NO_PROMO',
-        NULL,
-        NULL,
-        NULL,
-        NULL
+    union all 
+    SELECT
+    {{ dbt_utils.generate_surrogate_key(["'no_promo'"]) }}
+    , 'no_promo'
+    , null
+    , null
+    , null
+    , null
     )
     
 
