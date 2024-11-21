@@ -1,0 +1,154 @@
+version: 2
+
+models:
+  - name: stg_sql_server__users
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+      - name: updated_at_UTC
+        tests:
+          - not_null
+      - name: address_id
+        tests:
+          - not_null
+      - name: last_name
+        tests:
+          - not_null
+      - name: created_at
+        tests:
+          - not_null
+      - name: phone_number
+        tests:
+          - not_null
+      - name: first_name
+        tests:
+          - not_null
+      - name: email
+        tests:
+          - not_null
+          - unique
+      - name: data_modification
+      - name: date_load_UTC
+        tests:
+          - not_null
+
+  - name: stg_sql_server__promos
+    columns:
+      - name: promo_id
+        tests:
+          - not_null
+          - unique
+      - name: promo_name
+        tests:
+          - not_null
+      - name: discount
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - not_null
+      - name: date_modification
+        tests:
+          - not_null
+      - name: date_load_UTC
+        tests:
+          - not_null
+
+  - name: sql_server__orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: shipping_service
+        tests:
+          - not_null
+      - name: shipping_cost
+        tests:
+          - not_null
+      - name: address_id
+        tests:
+          - not_null
+      - name: created_at_UTC
+        tests:
+          - not_null
+      - name: promo_id
+        tests:
+          - not_null
+          - unique
+      - name: estimated_delivery_at_UTC
+        tests:
+          - not_null
+      - name: order_cost
+        tests:
+          - not_null
+      - name: user_id
+        tests:
+          - not_null
+      - name: order_total
+        tests:
+          - not_null
+      - name: delivered_at_UTC
+        tests:
+          - not_null
+      - name: tracking_id
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - not_null
+      - name: date_modification
+        tests:
+          - not_null
+      - name: date_load_UTC
+        tests:
+          - not_null
+
+  - name: stg_sql_server__addresses
+    columns:
+      - name: address_id
+        tests:
+          - not_null
+          - unique
+      - name: zipcode
+        tests:
+          - not_null
+      - name: country
+        tests:
+          - not_null
+      - name: address
+        tests:
+          - not_null
+      - name: state
+        tests:
+          - not_null
+      - name: date_modification
+        tests:
+          - not_null
+      - name: date_load_UTC
+        tests:
+          - not_null
+
+  - name: stg_server_sql__products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+      - name: price
+        tests:
+          - not_null
+      - name: name
+        tests:
+          - not_null
+      - name: inventory
+        tests:
+          - not_null
+      - name: date_modication
+        tests:
+          - not_null
+      - name: date_load_UTC
+        tests:
+          - not_null
