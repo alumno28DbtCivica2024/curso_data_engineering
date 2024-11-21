@@ -12,7 +12,7 @@ WITH src_users AS (
 renamed_casted AS (
     SELECT
         user_id
-        , convert_timezone('UTC', updated_at)_UTC as updated_at_UTC
+        , convert_timezone('UTC', updated_at) as updated_at_UTC
         , address_id
         , last_name
         , created_at
